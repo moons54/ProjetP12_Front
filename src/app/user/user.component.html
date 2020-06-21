@@ -1,0 +1,11 @@
+
+
+<p-dataView [value]="users">
+  <ng-template let-user pTemplate="listItem">
+    <div>
+      Dossier: {{user.nom}} -  Montant: {{user.societe}} -  Durée: {{user.telephone}} -  Taux : {{user.email}}
+      <button pButton type="button" icon="pi pi-pencil" (click)="onViewUser(user.id)" style="margin-top:0"></button>
+    </div>
+
+  </ng-template>
+</p-dataView>

@@ -1,0 +1,74 @@
+<!--
+<div class="container">
+  <div class="col-col-xs-12">
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let credit of allcredits; let i = index">
+        <p-panel header="Liste des crédits en cours" [style]="{'margin-bottom':'20px'}">
+          <div class="list-group-item">Nature du financement  : {{credit.nature}} </div>
+          <div class="list-group-item">Durée du Financement : {{ credit.duree }} </div>
+          <div class="list-group-item">Montant du Financement : {{ credit.montant }} </div>
+          <button class="btn btn-primary" (click)="onViewCredit(credit.id)">Détail du crédit</button>
+          <button class="btn btn-default" (click)="onDeletecredit(credit)">supprimer</button>
+        </p-panel>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="onNewCredit()">Nouveau Crédit</button>
+  </div>
+</div>
+-->
+<!--
+
+<mat-selection-list #credit>
+<mat-list-option *ngFor="let credit of allcredits" [value]="credit.id">
+  {{ credit.nature }}
+  {{ credit.montant }}
+</mat-list-option>
+
+</mat-selection-list>
+<mat-card>Credit selctionné {{credit.selectedOptions.selected.length}}</mat-card>
+<mat-card>
+  <mat-card-actions>
+    <button mat-button (click)="deleteCredit(credit.selectedOptions.selected)">Supprimer</button>
+  </mat-card-actions>
+</mat-card>
+-->
+
+<p-dataView [value]="credits">
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <div class="p-grid">
+        <div class="p-col-6 p-md-6 filter-container">
+          <div style="position:relative">
+            Liste des dossiers
+          </div>
+        </div>
+
+        <div class="p-col-6 p-md-6" style="text-align:right">
+          <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+        </div>
+      </div>
+    </div>
+  </p-header>
+
+<p-footer>
+  <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+</p-footer>
+
+<ng-template let-credit pTemplate="listItem">
+  <div>
+    Reference Dossier : {{credit.referenceDossier}} - {{credit.objet}} - {{credit.nature}}
+    {{credit.decision.statuts}}
+    <button pButton type="button" icon="pi pi-search" (click)="onViewCredit(credit.id)" style="margin-top:0"></button>
+    <button pButton type="button" icon="pi pi-ellipsis-h" (click)="onUpdateDecision(credit.decision.id,credit.referenceDossier)" style="margin-top:0"></button>
+
+  </div>
+</ng-template>
+<ng-template let-credit pTemplate="gridItem">
+  <div style="padding:.5em" class="p-col-12 p-md-3">
+    <p-panel [header]="credit.siretClient" [style]="{'text-align':'center'}"> Siret :
+      <div class="car-detail">Montant du pret: {{credit.montant}} - Durée du pret:{{credit.duree}}</div>
+      <button pButton type="button" icon="pi pi-search" (click)="onViewCredit(credit.id)" style="margin-top:0"></button>
+    </p-panel>
+  </div>
+</ng-template>
+</p-dataView>

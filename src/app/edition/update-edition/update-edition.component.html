@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Instruction dossier</div>
+  <form [formGroup]="editionForm" (ngSubmit)="onSubmit()">
+   <div class="form-group">
+      <label>Etat de l'offre de pret : </label>
+      <select class="form-control" formControlName="statuts" [value]="edition.statuts">
+        <option *ngFor="let statut of statuts">{{statut.viewValue}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Date de traitement : </label>
+      <input type="text" class="form-control" formControlName="dateEdition" [value]="edition.dateEdition">
+    </div>
+    <div class="form-group">
+      <label>Commentaire du controleur :</label>
+      <input type="text" class="form-control" formControlName="commentaire" [value]="edition.commentaire">
+    </div>
+    <div class="form-group">
+      <label>Date de deblocage prévue :</label>
+      <input type="text" class="form-control" formControlName="dateDeblocage" [value]="edition.dateDeblocage">
+    </div>
+    <div>
+      <button class="btn btn-success" type="submit">Valider</button>
+    </div>
+  </form>
+</div>

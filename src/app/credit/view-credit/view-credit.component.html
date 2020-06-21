@@ -1,0 +1,62 @@
+<div id="registration" class="container col-md-12">
+  <form id="regform" [formGroup]="registrationForm">
+      <mat-horizontal-stepper #stepper linear>
+          <mat-step formGroupName="details"
+                    [stepControl]="registrationForm.get('details')">
+            <ng-template matStepLabel>Detail du financement</ng-template>
+            <app-stepperdetail [creditform]="registrationForm"></app-stepperdetail>
+          </mat-step>
+
+        <mat-step formGroupName="assurance"
+                    [stepControl]="registrationForm.get('assurance')">
+            <ng-template matStepLabel>Detail de l'assurance</ng-template>
+            <app-stepperassurance [creditform]="registrationForm"></app-stepperassurance>
+          </mat-step>
+        <mat-step formGroupName="reccapitulatif"
+                  [stepControl]="registrationForm.get('reccapitulatif')">
+          <ng-template matStepLabel>Réccapitulatif</ng-template>
+          <app-stepperreccap [creditform]="registrationForm"></app-stepperreccap>
+        </mat-step>
+      </mat-horizontal-stepper>
+  </form>
+</div>
+
+<!--
+
+<mat-step [stepControl]="creditform" >
+
+</mat-step>
+<mat-step [stepControl]="creditform2">
+  <form [formGroup]="creditform2" (ngSubmit)="form2()" #formtwo="ngForm">
+    <ng-template matStepLabel>Détail de l'assurance</ng-template>
+    <mat-form-field>
+      <mat-label>Assurance</mat-label>
+      <input matInput placeholder="Assurance du prêt" formControlName="assurance">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>siret du clietn</mat-label>
+      <input matInput placeholder="Siret du client" formControlName="siretClient">
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </form>
+</mat-step>
+<mat-step [stepControl]="creditform3">
+  <form [formGroup]="creditform3" (ngSubmit)="form3()" #formthree="ngForm">
+    <ng-template matStepLabel>Détail du financement</ng-template>
+    <mat-form-field>
+      <mat-label>statut</mat-label>
+      <input matInput placeholder="status du prêt" formControlName="status">
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button type="button" (click)="formone.ngSubmit.emit();formtwo.ngSubmit.emit();formthree.ngSubmit.emit();onSaveCredit()">
+        valider
+      </button>
+    </div>
+  </form>
+</mat-step>
+</mat-horizontal-stepper>
+-->

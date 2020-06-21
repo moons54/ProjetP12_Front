@@ -1,0 +1,27 @@
+<div id="details" [formGroup]="creditform">
+  <div class="form-group col-md-8" formGroupName="details">
+    <label>Nature</label>
+    <select class="form-control" formControlName="nature">
+      <option *ngFor="let nature of natures">{{nature.viewValue}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-8" formGroupName="details">
+    <label>Montant</label>
+    <input type="text" class="form-control" formControlName="montant">
+  </div>
+  <div class="form-group col-md-8" formGroupName="details">
+    <label>Objet</label>
+    <select class="form-control" formControlName="objet">
+      <option *ngFor="let objet of objets">{{objet.viewValue}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-8" formGroupName="details">
+    <label>Durée du financement</label>
+    <input type="text" class="form-control" formControlName="duree">
+  </div>
+</div>
+  <div class="form-group col-md-8">
+    <button class="example-selected-value" mat-button color="primary" matStepperNext (click)="step1Submitted()">Next</button>
+  </div>
+
+

@@ -1,0 +1,18 @@
+<p-dataView [value]="decisions">
+  <p-header>
+    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+  </p-header>
+  <ng-template let-decision pTemplate="listItem">
+    <div>
+      {{decision.commentaire}}
+      {{decision.dateDecision}}
+      <button pButton type="button" icon="pi pi-search" (click)="onViewDecision(decision.id)" style="margin-top:0"></button>
+    </div>
+  </ng-template>
+  <ng-template let-decision pTemplate="gridItem">
+    <div class="ui-g-12 ui-md-3">
+      {{decision.statuts}}
+    </div>
+  </ng-template>
+</p-dataView>
+

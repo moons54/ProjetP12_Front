@@ -1,0 +1,24 @@
+
+  <div class="panel panel-default">
+    <div class="panel-heading text-center">Instruction dossier</div>
+    <form [formGroup]="decisionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Décision : </label>
+        <select class="form-control" formControlName="statuts" [value]="decision.statuts">
+          <option *ngFor="let statut of statuts">{{statut.viewValue}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Date de la décision : </label>
+        <input type="text" class="form-control" formControlName="dateDecision" [value]="decision.dateDecision">
+      </div>
+      <div class="form-group">
+        <label>Commentaire du financement :</label>
+        <input type="text" class="form-control" formControlName="commentaire" [value]="decision.commentaire">
+      </div>
+      <div>
+        <button class="btn btn-success" type="submit">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+

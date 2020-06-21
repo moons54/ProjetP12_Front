@@ -1,0 +1,28 @@
+<mat-card class="changeposition">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Definition de Votre Couverture Assurance de Prêt</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+    <p *ngIf="creditForm.get('assurance').get('assurance').value == 'Couverture Décés'">
+    L'assurance DCPTIA est une garantie qui accompagne l'assurance décès.
+    Cette protection couvre l'assuré en cas de Perte Totale et Irréversible d'Autonomie résultant d'une maladie ou d'un accident.
+    </p>
+    <p *ngIf="creditForm.get('assurance').get('assurance').value == 'Couverture Décés et invalidité'">
+      L'assurance PCTIA est une garantie qui accompagne l'assurance décès.
+      Cette protection couvre l'assuré en cas de Perte Totale et Irréversible d'Autonomie résultant d'une maladie ou d'un accident.
+      ITT : Incapacité Temporaire Totale : période pendant laquelle tu ne pourras pas accomplir les actes de la vie quotidienne de façon normale (accident...)
+    </p>
+    <p *ngIf="creditForm.get('assurance').get('assurance').value == 'Couverture Décés et invalidité et interuption de travail'">
+      L'assurance PTIA est une garantie qui accompagne l'assurance décès.
+      Cette protection couvre l'assuré en cas de Perte Totale et Irréversible d'Autonomie résultant d'une maladie ou d'un accident.
+      ITT : Incapacité Temporaire Totale : période pendant laquelle tu ne pourras pas accomplir les actes de la vie quotidienne de façon normale (accident...)
+      Quelle indemnisation ?
+      Il existe deux principes d'indemnisation. Le premier est indemnitaire : l'assurance de prêt va couvrir la perte de salaire générée par l'arrêt de l'activité professionnelle. Le second principe est forfaitaire.
+      Dans ce cas, c'est l'échéance de prêt qui est prise en charge.
+      Peu importe que l'assuré ait subi ou non une perte de salaire, il touchera le montant forfaitaire prévu.
+    </p>
+  </mat-card-content>
+</mat-card>

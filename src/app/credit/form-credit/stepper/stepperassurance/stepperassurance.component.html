@@ -1,0 +1,16 @@
+<!--<form [formGroup]="creditform" (ngSubmit)="form()" #formone="ngForm">-->
+<div id="assurance" [formGroup]="creditform">
+  <div class="form-group col-md-8" formGroupName="assurance">
+    <label>Assurance</label>
+    <select class="form-control" formControlName="assurance">
+      <option *ngFor="let assurance of assurances">{{assurance.viewValue}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-8" formGroupName="assurance">
+    <label>siret client</label>
+    <input type="text" class="form-control" formControlName="siretClient">
+  </div>
+</div>
+<div class="form-group col-md-8">
+<button class="example-selected-value" mat-button color="primary" matStepperNext (click)="step2Submitted()">Next</button>
+</div>

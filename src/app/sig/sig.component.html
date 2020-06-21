@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading text-center">Bilan</div>
+
+
+
+
+  <!-- List group -->
+  <ul class="list-group">
+    <ul class="list-group-item active">Solde Intermédiaire de Gestion</ul>
+    <ul class="list-group-item-info">Chiffre d'affaire : {{ sig.chiffreAffaire | currency:'Euro' }}</ul>
+    <ul class="list-group-item-info">Marge : {{sig.marge | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">production exercice : {{sig.productionExercice | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">production marge : {{sig.productionMarge | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Valeur Ajouté : {{sig.valeurAjoutee | currency:'Euro'}}</ul>
+
+    <ul class="list-group-item-info">Excedent Brut d'Exploitation  : {{sig.excedentBrutExploitation | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Résultat d'Exploitation : {{sig.resultatExploitation | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Résultat courant : {{sig.resultatcourant | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Résultat Exceptionnel : {{sig.resultatExceptionnel | currency:'Euro'}}</ul>
+    <ul class="list-group-item active">Résultat Exercice : {{sig.resultatExercice | currency:'Euro'}}</ul>
+  </ul>
+</div>

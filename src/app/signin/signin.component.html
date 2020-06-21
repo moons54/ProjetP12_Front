@@ -1,0 +1,67 @@
+<div class="col-sm-8 col-sm-offset-2">
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Inscription</div>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>Identifiant: </label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div class="form-group">
+      <label>Mot de passe:</label>
+      <input type="text" class="form-control" formControlName="password"
+      [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <div [ngStyle]="{color: getcolor()}" *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Le mot de passe est obligatoire</div>
+        <div *ngIf="f.password.errors.minlength">Le mot de passe doit contenir 6 caractères</div>
+      </div>
+    </div>
+  <!--  <div class="form-group">
+      <label>confirmation du mot de passe:</label>
+      <input type="text" class="form-control" formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+      <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+        <div *ngIf="f.confirmPassword.errors.required">Confirmer votre mot de passe</div>
+        <div *ngIf="f.confirmPassword.errors.mustMatch">Votre mot de passe ne correspond pas</div>
+      </div>
+    </div>-->
+    <div class="form-group">
+      <label>confirmation du mot de passe:</label>
+      <input type="text" class="form-control" formControlName="confirmPassword">
+      <!--<input matInput placeholder="Confirm password" formControlName="confirmPassword" [errorStateMatcher]="matcher"> -->
+      <mat-error *ngIf="signInForm.hasError('notSame')">
+        Passwords do not match</mat-error>
+    </div>
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label>Intitulé de votre société: </label>
+      <input type="text" class="form-control" formControlName="societe">
+    </div>
+    <div class="form-group">
+      <label>Numéro Siret: </label>
+      <input type="text" class="form-control" formControlName="siretClient">
+    </div>
+    <div class="form-group">
+      <label>Telephone: </label>
+      <input type="text" class="form-control" formControlName="telephone">
+    </div>
+    <div class="form-group">
+      <label>Adresse: </label>
+      <input type="text" class="form-control" formControlName="adresse">
+    </div>
+    <div class="form-group">
+      <label>Code Postal: </label>
+      <input type="text" class="form-control" formControlName="codePostal">
+    </div>
+    <div class="form-group">
+      <label>Ville: </label>
+      <input type="text" class="form-control" formControlName="ville">
+    </div>
+    <div>
+      <button class="btn btn-success" type="submit">Enregistrer</button>
+    </div>
+  </form>
+</div>
+</div>

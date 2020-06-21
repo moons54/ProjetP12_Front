@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <mat-card>
+    <mat-card-title>Détail du crédit</mat-card-title>
+    <mat-card-content>
+      <tr> Nature du credit :  {{credit$.nature}}</tr>
+      <tr> Montant du credit :  {{credit$.montant}}</tr>
+    </mat-card-content>
+    <mat-card-content>
+      <tr> Durée du credit :  {{credit$.duree}}</tr>
+      <tr> Status du credit :  {{credit$.status}}</tr>
+      <tr> Objet du credit :  {{credit$.objet}}</tr>
+      <tr> Reference du dossier : {{credit$.referenceDossier}}</tr>
+      <tr> Assurance du pret : {{credit$.assurance}}</tr>
+      <tr> Siret client :  {{credit$.siretClient}}</tr>
+<!--      <tr> decision pret : {{credit$.decision.statuts}}</tr>-->
+
+    </mat-card-content>
+  </mat-card>
+</div>

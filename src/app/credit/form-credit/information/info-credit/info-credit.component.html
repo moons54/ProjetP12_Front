@@ -1,0 +1,35 @@
+<mat-card class="changeposition">
+  <mat-card-header>
+    <mat-card-title>Pret professionnel</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+    <p *ngIf="creditForm.get('details').get('objet').value == 'Rachat'">
+      Le rachat de crédit, aussi appelé restructuration, consolidation ou regroupement de crédit,
+      est une solution financière qui tente de répondre à une situation d'endettement excessif.
+      L'objectif du rachat de crédits est de diminuer le montant global des remboursements mensuels
+    </p>
+    <p *ngIf="creditForm.get('details').get('objet').value == 'Création'">
+
+      Un prêt d'honneur est accordé à un créateur ou repreneur d'entreprise pour l'aider à financer :
+
+      ses investissements de départ ;
+      mais aussi ses besoins en fonds de roulement.
+      Il présente de nombreux avantages :
+
+      souvent proposé à un taux d'intérêt nul ou inférieur à celui des prêts bancaires,
+      accordé sur le moyen terme, généralement entre 2 et 5 ans,
+      montants généralement compris entre 2 000 € et 50 000 € (parfois jusqu'à plus de 90 000 € pour des projets innovants).
+      Le créateur n'a pas besoin de fournir des garanties réelles ou personnelles pour obtenir le prêt.
+    </p>
+    <p *ngIf="creditForm.get('details').get('objet').value == 'Trésorerie'">
+
+      Le crédit de trésorerie est un type de crédit professionnel à court terme qui sert à financer des besoins ponctuels
+      ou récurrents de trésorerie pour les entreprises. Il est accordé par les banques par contrat signé ou par simple accord verbal.
+      Il permet à l’entreprise d’avoir pendant une période limitée son compte débiteur.
+      Les banques ne demandent généralement pas de garantie pour le crédit de trésorerie, néanmoins elles ne l’accordent pas à toutes les entreprises.
+    </p>
+
+  </mat-card-content>
+</mat-card>

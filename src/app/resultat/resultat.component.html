@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-col-xs-12">
+    <div class="list-group">
+      <button class="list-group-item" *ngFor="let result of resultats._embedded.resultats; let i = index" (click)="onViewResultat(result.id)">
+        <p-panel header="compte de resultat" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+          <div class="list-group-item"> Chiffre d'affaire :  {{ result.chiffreAffaire }} Euro</div>
+          <div class="list-group-item"> Resultat d'exploitation :  {{ result.resultatExploitation }} Euro</div>
+          <div class="list-group-item"> Bénéfice ou Perte  :  {{ result.beneficePErte }} Euro</div>
+        </p-panel>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+

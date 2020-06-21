@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="list-group">
+      <button class="list-group-item" *ngFor="let bil of bilans; let i = index"  (click)="onViewBilan(bil.id)">
+        <div class="list-group-item">
+          <div style="text-align: left">Numéro Kbis : {{ bil.numeroKbis }}</div>
+          <div class="list-group-item">  Durée du bilan : {{ bil.duree }} Mois</div>
+          <div class="list-group-item">Total bilan {{ bil.totalbilan }} --
+            Resultat de l'exercice : {{ bil.resultatexercice }} Euro --
+            Fonds Propres : {{bil.fondPropre}} Euro</div>
+            numresultat : {{bil.resultat.id}}
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

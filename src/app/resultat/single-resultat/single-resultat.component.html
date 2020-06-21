@@ -1,0 +1,145 @@
+<!--
+<div class="container">
+    <p-card>
+      <p-header class="text-center">
+        <h3>Détail du compte de résulat</h3>
+      </p-header>
+      <p-panel header="Produits d'exploitation : {{ resultat$.chiffreAffaire }}" [toggleable]="true" [style]="{'margin-bottom':'20px'}" class="text-center">
+        <div class="text-primary text-right">
+          <div class="p-grid">
+            <div class="p-col">
+              <div class="box">
+                <div *ngIf="resultat$.productionVenduBien">Production vendue Biens :</div>
+                <div *ngIf="resultat$.productionVenduService">Production vendue Services :</div>
+                <div *ngIf="resultat$.productionStockee">Production Stockée : </div>
+                <div *ngIf="resultat$.productionimmobilise">production Immobilisé :</div>
+                <div *ngIf="resultat$.subventionExploitationRecu">Subvention d'exploitation recu :</div>
+                <div *ngIf="resultat$.autresProduits">Autres produits :</div>
+              </div>
+            </div>
+            <div class="p-col">
+              <div class="box">
+                <div *ngIf="resultat$.productionVenduBien">{{ resultat$.productionVenduBien }}</div>
+                <div *ngIf="resultat$.productionVenduService">{{ resultat$.productionVenduService }}</div>
+                <div *ngIf="resultat$.productionStockee">{{ resultat$.productionStockee }}</div>
+                <div *ngIf="resultat$.productionimmobilise">{{ resultat$.productionimmobilise }}</div>
+                <div *ngIf="resultat$.subventionExploitationRecu">{{ resultat$.subventionExploitationRecu }}</div>
+                <div *ngIf="resultat$.autresProduits">{{ resultat$.autresProduits }}</div>
+              </div>
+            </div>
+            <div class="p-col">
+              <div class="box">
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-panel>
+      <td></td>
+      <td></td>
+      <p-panel header="Charges d'exploitation : {{ resultat$.chargesExploitation }}" [toggleable]="true" [style]="{'margin-bottom':'20px'}" class="text-center">
+        <div class="text-primary text-right">
+          <div class="p-grid">
+            <div class="p-col">
+              <div class="box">
+                <div *ngIf="resultat$.achatsMarchandises">Achats de marchandises :</div>
+                <div *ngIf="resultat$.variationStockMarchandise">Variation de stock :</div>
+                <div *ngIf="resultat$.achatsMatierePremiere">Achats de matières premières :</div>
+                <div *ngIf="resultat$.variationStockMatierePremiere">Variation de stock de matière première :</div>
+                <div *ngIf="resultat$.chargesExternes">Autres charges externes :</div>
+                <div *ngIf="resultat$.impotsTaxes">Impots, taxes et versements assimilés :</div>
+                <div *ngIf="resultat$.remunerationPersonnel">Rémunération du personnel :</div>
+                <div *ngIf="resultat$.chargesSociales">Charges Sociales :</div>
+                <div *ngIf="resultat$.dotationAmmortissement">Dotation aux amortissements :</div>
+                <div *ngIf="resultat$.dotationProvision">Dotation aux provisions :</div>
+              </div>
+            </div>
+            <div class="p-col">
+              <div class="box">
+                <div *ngIf="resultat$.achatsMarchandises">{{ resultat$.achatsMarchandises }} </div>
+                <div *ngIf="resultat$.variationStockMarchandise">{{ resultat$.variationStockMarchandise }}</div>
+                <div *ngIf="resultat$.achatsMatierePremiere">{{resultat$.achatsMatierePremiere }} </div>
+                <div *ngIf="resultat$.variationStockMatierePremiere">{{ resultat$.variationStockMatierePremiere }} </div>
+                <div *ngIf="resultat$.chargesExternes">{{ resultat$.chargesExternes }}</div>
+                <div *ngIf="resultat$.impotsTaxes">{{resultat$.impotsTaxes }}</div>
+                <div *ngIf="resultat$.remunerationPersonnel">{{ resultat$.remunerationPersonnel }}</div>
+                <div *ngIf="resultat$.chargesSociales">{{ resultat$.chargesSociales }} </div>
+                <div *ngIf="resultat$.dotationAmmortissement">{{ resultat$.dotationAmmortissement }}</div>
+                <div *ngIf="resultat$.dotationProvision">{{resultat$.dotationProvision }}</div>
+              </div>
+            </div>
+            <div class="p-col">
+              <div class="box">
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-panel>
+      <p-footer>
+        <p-panel header="Résultat d'exploitation : {{ resultat$.resultatExploitation }}" [toggleable]="true" [style]="{'margin-bottom':'20px'}" class="text-center">
+          <div class="text-primary text-right">
+
+          <div class="p-grid">
+            <div class="p-col">
+              <div class="box">
+                <div *ngIf="resultat$.beneficePErte">Résultat  : </div>
+                <div *ngIf="resultat$.resultatfiscal">Résultat fiscal : </div>
+              </div>
+            </div>
+              <div class="p-col">
+                <div class="box">
+                  <div [ngClass]="{'text' :true,
+                                        'text-danger': resultat$.beneficePErte<0,
+                                        'text-primay': resultat$.beneficePErte>0}"> {{ resultat$.beneficePErte }}</div>
+                  <div>{{ resultat$.resultatfiscal }}</div>
+                </div>
+            </div>
+            <div class="p-col">
+              <div class="box">
+              </div>
+            </div>
+          </div>
+          </div>
+        </p-panel>
+      </p-footer>
+    </p-card>
+  </div>
+-->
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading text-center">Compte de resultat</div>
+  
+  
+  
+
+  <!-- List group -->
+  <ul class="list-group">
+    <ul class="list-group-item active">Produits d'exploitation</ul>
+    <ul class="list-group-item-info">Production vendue Biens : {{ resultat$.productionVenduBien | currency:'Euro' }}</ul>
+    <ul class="list-group-item-info">Production vendue Services : : {{resultat$.productionVenduService | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Production Stockée :  : {{resultat$.productionStockee| currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Production Immobilisée :  {{resultat$.productionimmobilise | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Subvention d'exploitation :  {{resultat$.subventionExploitationRecu | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Autres Produits :  {{resultat$.autresProduits | currency:'Euro'}}</ul>
+    <ul class="list-group-item-success">Total Produits d'exploitations :  {{resultat$.chiffreAffaire | currency:'Euro'}}</ul>
+  </ul>
+  <ul class="list-group">
+    <ul class="list-group-item active">Charges d'exploitation</ul>
+    <ul class="list-group-item-info">Achats de Marchandises : {{ resultat$.achatsMarchandises | currency:'Euro' }}</ul>
+    <ul class="list-group-item-info">Variation de stock marchandise : : {{resultat$.variationStockMarchandise | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Achat de matière premiere:  : {{resultat$.achatsMatierePremiere| currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Variation de stock de matière premiere :  {{resultat$.variationStockMatierePremiere | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Charges externes :  {{resultat$.chargesExternes | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Impots taxes :  {{resultat$.impotsTaxes | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Rémunération du personnel :  {{resultat$.remunerationPersonnel | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Charges Sociales :  {{resultat$.chargesSociales | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Dotations aux amortissement :  {{resultat$.dotationAmmortissement | currency:'Euro'}}</ul>
+    <ul class="list-group-item-info">Dotations aux provision :  {{resultat$.dotationProvision | currency:'Euro'}}</ul>
+    <ul class="list-group-item-success">Total Charges d'exploitations :  {{resultat$.chargesExploitation | currency:'Euro'}}</ul>
+  </ul>
+  <ul class="list-group">
+    <ul class="list-group-item-info">Résultat d'exploitation : {{resultat$.resultatExploitation}}</ul>
+    <ul class="list-group-item-info">Bénéfice - Pertes : {{resultat$.beneficePErte}}</ul>
+    <ul class="list-group-item active">Résultat fiscal : {{resultat$.resultatfiscal}}</ul>
+  </ul>
+</div>

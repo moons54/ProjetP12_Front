@@ -1,0 +1,10 @@
+
+<p-dataView [value]="credits">
+  <ng-template let-credit pTemplate="listItem">
+    <div>
+      Dossier: {{credit.referenceDossier  }} -  Montant: {{credit.montant |  currency:'Euro'}} -  Durée: {{credit.duree}} -  Taux : {{credit.taux}}% --  Couverture Assurance : {{credit.assurance}}
+      <button pButton type="button" icon="pi pi-pencil" (click)="onViewEdition(credit.id,credit.decision.edition.id)" style="margin-top:0"></button>
+    </div>
+
+  </ng-template>
+</p-dataView>

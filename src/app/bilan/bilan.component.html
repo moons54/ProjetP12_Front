@@ -1,0 +1,58 @@
+<!--
+
+      <mat-card-title>Bilan du kbis n°: {{ bilan$.numeroKbis }} </mat-card-title>
+      <mat-card-subtitle>periode : {{ bilan$.duree}} mois</mat-card-subtitle>
+
+  Passif
+          <tr>Capital : {{bilan$.capital}}</tr>
+          <tr>Résultat de l'exercice : {{ bilan$.resultatexercice }}</tr>
+          <tr>Fonds Propres : {{ bilan$.fondPropre}}</tr>
+          <tr>Report : {{bilan$.report}}</tr>
+     Dettes
+          <tr>Fournisseur : {{bilan$.fournisseur}}</tr>
+          <tr>Montant des dettes :{{bilan$.autresdettes}}</tr>
+          <tr>Total des dettes :{{bilan$.totaldettes}}</tr>
+
+     <tr>Total du bilan : {{ bilan$.totalbilan }}</tr>
+   Actif circulant
+      <tr></tr>
+      <tr>Créances clients : {{bilan$.posteclients}}</tr>
+      <tr>Disponibilités : {{bilan$.disponibilite}}</tr>
+      <tr>Total de l'actif : {{ bilan$.totalactif }}</tr>
+
+    <mat-card-actions>
+      <button mat-button (click)="onBack()">Retour</button>
+    </mat-card-actions>
+-->
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading text-center">Bilan</div>
+
+
+
+
+    <!-- List group -->
+    <ul class="list-group">
+      <ul class="list-group-item active">Actif</ul>
+      <ul class="list-group-item-info">Total Immobilisation : {{ bilan.totalactif | currency:'Euro' }}</ul>
+      <ul class="list-group-item-info">Créances : {{bilan.posteclients | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Disponibilités : {{bilan.disponibilite | currency:'Euro'}}</ul>
+      <ul class="list-group-item-success" >Total de L'ACTIF : {{bilan.totalactif | currency:'Euro'}}</ul>
+    </ul>
+    <ul class="list-group">
+      <ul class="list-group-item active">Passif</ul>
+      <ul class="list-group-item-info">Capital Social : {{ bilan.capital | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Report à nouveau : {{bilan.report | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Resultat de l'exercie : {{bilan.resultatexercice | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Total des capitaux Propres : {{bilan.fondPropre | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Emprunt et dettes : {{ bilan.autresdettes | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Fournisseur : {{ bilan.fournisseur | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Autres dettes : {{ bilan.autresdettes | currency:'Euro'}}</ul>
+      <ul class="list-group-item-info">Produits constatés d'avance : </ul>
+      <ul class="list-group-item-info">Total des dettes : {{ bilan.totaldettes | currency:'Euro'}}</ul>
+      <ul class="list-group-item-success" >Total du PASSIF : {{bilan.totalbilan | currency:'Euro'}}</ul>
+    </ul>
+  </div>
+
+

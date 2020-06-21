@@ -1,0 +1,31 @@
+<!--<mat-card>
+  <form [formGroup]="creationgroup" (submit)="onLogin(f.value)">
+    <div class="exemple-container">
+      <mat-form-field>
+        <input matInput placeholder="username" required formControlName="username">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="password" required formControlName="password">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-card>-->
+
+<div class="col-md-6">
+  <div class="panel-default">
+    <div class="panel-heading">Authentification</div>
+    <div class="panel-body">
+      <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+        <div class="form-group">
+          <label class="control-label">Username</label>
+          <input type="text" name="username" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="control-label">Password</label>
+          <input type="password" name="password" ngModel class="form-control">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
